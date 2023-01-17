@@ -38,3 +38,13 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# book(s)
+*.pdf
