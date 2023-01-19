@@ -72,8 +72,9 @@ group :test do
 end
 
 gem 'csv'
+gem 'daru'
 gem 'dotenv'
-gem 'ruby-openai'
 gem 'optparse'
 gem 'pandas'
 gem 'pdf-reader'
+gem 'ruby-openai'
