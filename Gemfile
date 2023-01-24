@@ -54,7 +54,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pycall'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -77,4 +76,5 @@ gem 'dotenv'
 gem 'optparse'
 gem 'pandas'
 gem 'pdf-reader'
+gem 'pycall'
 gem 'ruby-openai'

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  root 'components#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root 'components#index'
+  
+  post '/ask', to: 'questions#ask'
+  get '/questions/:id', to: 'questions#show'
 end
