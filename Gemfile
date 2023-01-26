@@ -73,6 +73,7 @@ end
 gem 'csv'
 gem 'daru'
 gem 'dotenv'
+gem 'numpy'
 gem 'optparse'
 gem 'pandas'
 gem 'pdf-reader'

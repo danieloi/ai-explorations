@@ -5,7 +5,6 @@ require 'pdf-reader'
 require 'optparse'
 require 'pycall/import'
 include PyCall::Import
-require 'pandas'
 require 'daru'
 
 # Use load_env to trace the path of .env:

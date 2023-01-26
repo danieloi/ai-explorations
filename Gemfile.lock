@@ -248,6 +248,7 @@ DEPENDENCIES
   dotenv
   jbuilder
   jsbundling-rails
+  numpy
   optparse
   pandas
   pdf-reader
