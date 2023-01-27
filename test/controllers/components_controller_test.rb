@@ -1,8 +1,8 @@
-require "test_helper"
+require 'test_helper'
 
 class ComponentsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get components_index_url
+  test 'should get index' do
+    get '/'
     assert_response :success
   end
 end
