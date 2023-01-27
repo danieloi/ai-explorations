@@ -44,7 +44,6 @@ export default function home() {
   const handleAskAnother = (event) => {
     event.preventDefault();
     setAnswer("");
-    setQuestion(DEFAULT_QUESTION);
     textAreaRef.current.select();
   };
 
@@ -80,7 +79,7 @@ export default function home() {
             onClick={handleSubmit}
           >
             <button type="submit" id="ask-button" disabled={isFetching}>
-              {isFetching ? "Asking" : "Ask question"}
+              {isFetching ? "Asking..." : "Ask question"}
             </button>
           </div>
         </form>

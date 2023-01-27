@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   skip_before_action :verify_authenticity_token
   SEPARATOR_LEN = 3
   SEPARATOR = "\n* ".freeze
+  MAX_SECTION_LEN = 500
 
   COMPLETIONS_MODEL = 'text-davinci-003'.freeze
   COMPLETIONS_API_PARAMS = {
@@ -32,6 +33,7 @@ class QuestionsController < ApplicationController
       @previous_question.ask_count += 1
       @previous_question.save
       render json: @previous_question
+      return
     end
 
     df = Daru::DataFrame.from_csv('book.pdf.pages.csv')
@@ -47,7 +49,7 @@ class QuestionsController < ApplicationController
                              })
 
     if @question.save
-      render json: { question: @question.question, answer: @question.answer, id: @question.pk }
+      render json: { question: @question.question, answer: @question.answer }
     else
       render json: @question.errors, status: :unprocessable_entity
     end
@@ -80,7 +82,7 @@ class QuestionsController < ApplicationController
       }
     )
 
-    [response['choices'][0]['text'].strip(" \n"), context]
+    [response['choices'][0]['text'].strip, context]
   end
 
   def construct_prompt(question, context_embeddings, df)
@@ -96,7 +98,7 @@ class QuestionsController < ApplicationController
 
       chosen_sections_len += document_section['tokens'] + SEPARATOR_LEN
       if chosen_sections_len > MAX_SECTION_LEN
-        space_left = MAX_SECTION_LEN - chosen_sections_len - SEPARATOR.len
+        space_left = MAX_SECTION_LEN - chosen_sections_len - SEPARATOR.length
         chosen_sections << SEPARATOR + document_section['content'][0...space_left]
         chosen_sections_indexes << section_index
         break
@@ -148,7 +150,7 @@ class QuestionsController < ApplicationController
     something new. Few things are worth holding your attention for a long period of time."
 
     [
-      (header + chosen_sections.join('') + question1 + question2 + question3 + question_4 + question5 + question6 + question7 + question8 + question9 + question10 + "\n\n\nQ: " + question + "\n\nA: "), chosen_sections.join('')
+      (header + chosen_sections.join('') + question1 + question2 + question3 + question4 + question5 + question6 + question7 + question8 + question9 + question10 + "\n\n\nQ: " + question + "\n\nA: "), chosen_sections.join('')
     ]
   end
 
