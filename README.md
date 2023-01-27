@@ -1,5 +1,8 @@
 # README
 
+## Deployed site
+
+https://afternoon-river-75904.herokuapp.com/
 ## Setup  
 
 Clone the repo and make sure your `.env` file is present and contains the `OPENAI_API_KEY` variable.
