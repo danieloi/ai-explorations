@@ -48,6 +48,3 @@
 
 # book(s)
 *.pdf
-
-# generated data files
-*.csv
