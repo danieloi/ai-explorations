@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :initialize_openai_client
-
+  skip_before_action :verify_authenticity_token
   SEPARATOR_LEN = 3
   SEPARATOR = "\n* ".freeze
 

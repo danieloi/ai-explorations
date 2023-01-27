@@ -50,16 +50,16 @@ export default function home() {
 
   return (
     <>
-      <div class="header">
-        <div class="logo">
+      <div className="header">
+        <div className="logo">
           <a href="https://www.amazon.com/Minimalist-Entrepreneur-Great-Founders-More/dp/0593192397">
             <img src={BookImage} loading="lazy" />
           </a>
           <h1>Ask My Book</h1>
         </div>
       </div>
-      <div class="main">
-        <p class="credits">
+      <div className="main">
+        <p className="credits">
           This is an experiment in using AI to make my book's content more
           accessible. Ask a question and AI'll answer it in real-time:
         </p>
@@ -73,7 +73,7 @@ export default function home() {
             ref={textAreaRef}
           ></textarea>
           <div
-            class="buttons"
+            className="buttons"
             style={{
               display: answer ? "none" : "flex",
             }}
@@ -84,7 +84,7 @@ export default function home() {
             </button>
           </div>
         </form>
-        <p id="answer-container" class={answer ? "showing" : "hidden"}>
+        <p id="answer-container" className={answer ? "showing" : "hidden"}>
           <strong>Answer:</strong> <span id="answer">{answer}</span>{" "}
           <button
             id="ask-another-button"
@@ -96,7 +96,7 @@ export default function home() {
         </p>
       </div>
       <footer>
-        <p class="credits">
+        <p className="credits">
           Project by <a href="https://twitter.com/shl">Sahil Lavingia</a> •{" "}
           <a href="https://github.com/slavingia/askmybook">Fork on GitHub</a>
         </p>

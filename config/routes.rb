@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   root 'components#index'
   
   post '/ask', to: 'questions#ask'
-  get '/questions/:id', to: 'questions#show'
 end
