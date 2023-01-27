@@ -15,7 +15,6 @@ class QuestionsController < ApplicationController
 
   MODEL_NAME = 'curie'.freeze
 
-  DOC_EMBEDDINGS_MODEL = "text-search-#{MODEL_NAME}-doc-001".freeze
   QUERY_EMBEDDINGS_MODEL = "text-search-#{MODEL_NAME}-query-001".freeze
 
   def index; end
@@ -180,10 +179,6 @@ class QuestionsController < ApplicationController
 
   def get_query_embedding(text)
     get_embedding(text, QUERY_EMBEDDINGS_MODEL)
-  end
-
-  def get_doc_embedding(text)
-    get_embedding(text, DOC_EMBEDDINGS_MODEL)
   end
 
   def get_embedding(text, model)

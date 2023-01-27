@@ -75,3 +75,5 @@ gem 'pdf-reader'
 gem 'pg'
 gem 'pycall'
 gem 'ruby-openai'
+
+gem "matrix", "~> 0.4.2"

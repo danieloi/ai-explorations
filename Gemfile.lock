@@ -246,6 +246,7 @@ DEPENDENCIES
   dotenv
   jbuilder
   jsbundling-rails
+  matrix (~> 0.4.2)
   optparse
   pdf-reader
   pg
